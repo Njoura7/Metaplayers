@@ -1,8 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;800&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Exo 2',sans-serif;
+  color:black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +14,194 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.logo{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  top:10px;
+  left:10px;
+  width:100px;
+  height:100px;
+}
+.logo > h1{
+  color:white;  
+  border-radius:0.25rem;
+  font-weight: 800;
+  font-size: 28px;
+  margin-left: 20px;
+}
+.main{
+  width:100%;
+  height: 100vh;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.overlay{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#00000055;
+}
+
+.container {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  display:flex;
+  gap:2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 40%;
+  height:20rem;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(232, 219, 219, 0.2);
+
+  transition: all 0.3s ease-in-out;
+  padding:10px;
+}
+
+.card h2 {
+  font-size: 24px;
+  
+  
+  font-size: 24px;
+
+  transition: all 0.3s ease-in-out; /* add transition */
+}
+.title-btn{
+  display:flex;
+  position: absolute; /* add position absolute */
+  bottom: 40px; 
+  transition: all 0.3s ease-in-out; /* add transition */  
+}
+.title-btn button{
+  background:rgb(65, 55, 143);
+  font-size: 11px;
+  padding:5px;
+  border-radius:10px;
+  margin-left:12px;
+  opacity:0;
+}
+.card p {
+  position:absolute;
+  color:black ;
+  font-size: 16px;
+  bottom: 20px; /* add margin top */
+  opacity: 0; /* add opacity */
+  transition: all 0.3s ease-in-out; /* add transition */
+  border-radius: 5px;
+  padding:5px;
+}
+.card:hover h2 {
+  bottom: 120px; 
+}
+.card:hover .title-btn{
+  bottom:100px;
+}
+.card:hover .title-btn>button{
+  opacity:1;
+}
+.title-btn:hover button {
+color:rgb(65, 55, 143);
+background:white;
+
+}
+.card:hover p {
+ bottom: 20px; /* change margin top to move up */
+  opacity: 1; /* change opacity to hide */
+  background:rgba(255, 252, 252, 0.6);
+}
+
+.card1 {
+  background-image: url("./assets/lol.jpg");
+}
+
+.card2 {
+  background-image: url("./assets/csgo.jpg");
+}
+
+/* styling the modal */
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgb(240, 226, 226);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width:50%;
+  height:50%;
+
+  position:relative;
+}
+ .details{
+  display:flex;
+ justify-content: space-around;
+
+}
+.modal h2{
+  font-size:1.2rem;
+  
+color:black;
+}
+
+.modal p{
+  padding:15px;
+  margin-bottom:1.5rem ;
+font-size: 1rem;
+  color:black;
+}
+.close-btn {
+  background-color: rgb(188, 54, 54);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top:40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position:absolute;
+  left:0;
+  bottom:2px;
+}
+
+.register{
+  color: black;
+  margin-top:2rem;
+  background:rgb(47, 143, 143);
+  border-radius:0.5rem;
+  padding:0.5rem;
+}
+
+.submit{
+  color:rgb(192, 187, 187);
+  background-color: rgb(14, 93, 14);
+  padding:10px;
+  border-radius:6px;
+  margin:5px;
 }
